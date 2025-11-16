@@ -45,11 +45,11 @@ jobs:
         uses: actions/configure-pages@v4
         
       - name: 上传构建产物
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         with:
           # 上传整个项目目录作为静态内容
           path: '.'
           
       - name: 部署到GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v3
