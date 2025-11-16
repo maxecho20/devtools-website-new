@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevTools MCP 介绍 - Google DevFest Workshop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <span class="google-g">G</span>
+                <span class="google-o1">o</span>
+                <span class="google-o2">o</span>
+                <span class="google-g2">g</span>
+                <span class="google-l">l</span>
+                <span class="google-e">e</span>
+                <span class="devfest-text"> DevFest</span>
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="gdg-devfest.html">GDG & DevFest</a></li>
+                <li><a href="devtools-mcp.html" class="active">DevTools MCP</a></li>
+                <li><a href="about-me.html">关于我</a></li>
+            </ul>
+            
+            <div class="mobile-menu">
+                <div class="menu-btn">
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 页面内容 -->
+    <main class="page-content">
+        <div class="container">
+            <!-- DevTools MCP 介绍部分 -->
+            <section class="content-section" id="intro">
+                <h1>Chrome DevTools MCP Server</h1>
+                <p class="subtitle">强大的浏览器开发者工具服务器，提供高级网页调试和自动化能力</p>
+                
+                <div class="content-card">
+                    <h2>什么是 DevTools MCP Server？</h2>
+                    <p>DevTools MCP (Message Control Protocol) Server 是一个基于 Chrome DevTools Protocol 的高级服务器实现，它提供了一套完整的 API，允许开发者通过程序化方式控制和调试浏览器。这使得开发者可以自动化测试、执行复杂的调试任务，以及创建自定义的开发工具和工作流。</p>
+                    
+                    <div class="workshop-highlights">
+                        <div class="highlight-card">
+                            <div class="highlight-icon">🔧</div>
+                            <h3>程序化控制</h3>
+                            <p>通过 API 完全控制浏览器的各种功能，包括 DOM 操作、CSS 调试、JavaScript 执行等。</p>
+                        </div>
+                        
+                        <div class="highlight-card">
+                            <div class="highlight-icon">🤖</div>
+                            <h3>自动化测试</h3>
+                            <p>实现端到端测试、UI 自动化和性能测试，确保网页应用质量和性能。</p>
+                        </div>
+                        
+                        <div class="highlight-card">
+                            <div class="highlight-icon">⚡</div>
+                            <h3>开发工作流</h3>
+                            <p>创建自定义开发工具和工作流，提高开发效率和代码质量。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 核心功能 -->
+            <section class="content-section" id="features">
+                <div class="content-card">
+                    <h2>核心功能</h2>
+                    
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <div class="feature-number">01</div>
+                            <h3>DOM 操作</h3>
+                            <p>通过 API 动态查询、创建、修改和删除 DOM 元素，实现复杂的页面交互自动化。</p>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-number">02</div>
+                            <h3>CSS 调试</h3>
+                            <p>实时修改和调试 CSS 样式，查看样式应用效果，解决布局和样式问题。</p>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-number">03</div>
+                            <h3>JavaScript 执行</h3>
+                            <p>在页面上下文中执行 JavaScript 代码，获取执行结果，调试和分析运行时行为。</p>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-number">04</div>
+                            <h3>网络监控</h3>
+                            <p>监控和分析网络请求，模拟不同网络条件，优化页面加载性能。</p>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-number">05</div>
+                            <h3>性能分析</h3>
+                            <p>捕获性能指标，分析渲染性能，识别和解决性能瓶颈。</p>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-number">06</div>
+                            <h3>自动化测试</h3>
+                            <p>编写和执行端到端测试脚本，验证应用功能和用户体验。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 主要工具和API -->
+            <section class="content-section" id="tools-api">
+                <div class="content-card">
+                    <h2>主要工具和API</h2>
+                    
+                    <div class="content-grid">
+                        <div class="content-card">
+                            <h3>页面操作工具</h3>
+                            <ul style="padding-left: 20px; margin-bottom: 16px;">
+                                <li><strong>navigate_page</strong>: 导航到指定 URL，支持前进、后退和刷新操作</li>
+                                <li><strong>take_screenshot</strong>: 捕获页面或特定元素的截图</li>
+                                <li><strong>take_snapshot</strong>: 获取页面 DOM 结构快照</li>
+                                <li><strong>resize_page</strong>: 调整页面视口大小，用于响应式设计测试</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="content-card">
+                            <h3>DOM 交互工具</h3>
+                            <ul style="padding-left: 20px; margin-bottom: 16px;">
+                                <li><strong>click</strong>: 模拟鼠标点击操作</li>
+                                <li><strong>fill</strong>: 在输入框中填写文本</li>
+                                <li><strong>fill_form</strong>: 批量填写表单字段</li>
+                                <li><strong>drag</strong>: 模拟拖拽操作</li>
+                                <li><strong>hover</strong>: 模拟鼠标悬停效果</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="content-card">
+                            <h3>调试和分析工具</h3>
+                            <ul style="padding-left: 20px; margin-bottom: 16px;">
+                                <li><strong>evaluate_script</strong>: 在页面上下文中执行 JavaScript</li>
+                                <li><strong>list_console_messages</strong>: 获取控制台日志信息</li>
+                                <li><strong>list_network_requests</strong>: 查看网络请求详情</li>
+                                <li><strong>performance_start_trace</strong>: 开始性能分析追踪</li>
+                                <li><strong>performance_stop_trace</strong>: 停止并获取性能分析结果</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 使用场景示例 -->
+            <section class="content-section" id="use-cases">
+                <div class="content-card">
+                    <h2>使用场景示例</h2>
+                    
+                    <div class="content-grid">
+                        <div class="content-card">
+                            <h3>自动化功能测试</h3>
+                            <p>使用 DevTools MCP 可以编写自动化脚本来测试用户界面的功能，模拟用户交互并验证结果。</p>
+                            <pre><code>// 示例：登录功能测试
+evaluate_script({
+  function: () => {
+    document.querySelector('#username').value = 'testuser';
+    document.querySelector('#password').value = 'password';
+    document.querySelector('#login-form').submit();
+    return document.URL; // 返回登录后的URL
+  }
+});</code></pre>
+                        </div>
+                        
+                        <div class="content-card">
+                            <h3>性能监控</h3>
+                            <p>通过性能追踪API，可以监控网页的加载性能，收集关键性能指标，优化用户体验。</p>
+                            <pre><code>// 示例：性能监控
+performance_start_trace({ reload: true, autoStop: true });
+// 等待页面加载完成
+// ...
+performance_stop_trace();
+// 分析性能报告</code></pre>
+                        </div>
+                        
+                        <div class="content-card">
+                            <h3>响应式设计测试</h3>
+                            <p>调整浏览器视口大小，测试网页在不同设备上的显示效果，确保响应式设计正确实现。</p>
+                            <pre><code>// 示例：测试不同设备尺寸
+resize_page({ width: 375, height: 812 }); // iPhone X
+// 截图保存
+take_screenshot({ filePath: 'mobile-view.png' });
+resize_page({ width: 768, height: 1024 }); // iPad
+take_screenshot({ filePath: 'tablet-view.png' });</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 开发最佳实践 -->
+            <section class="content-section" id="best-practices">
+                <div class="content-card">
+                    <h2>开发最佳实践</h2>
+                    
+                    <div class="workshop-highlights">
+                        <div class="highlight-card">
+                            <div class="highlight-icon">📝</div>
+                            <h3>编写模块化测试</h3>
+                            <p>将测试代码拆分为可复用的模块，便于维护和扩展，提高测试代码的可读性。</p>
+                        </div>
+                        
+                        <div class="highlight-card">
+                            <div class="highlight-icon">⏱️</div>
+                            <p>使用适当的等待策略，避免硬编码延迟，确保测试的稳定性和可靠性。</p>
+                        </div>
+                        
+                        <div class="highlight-card">
+                            <div class="highlight-icon">🔍</div>
+                            <h3>元素定位策略</h3>
+                            <p>优先使用稳定的元素选择器，如 ID、数据属性等，避免使用易变的 XPath 或 CSS 路径。</p>
+                        </div>
+                        
+                        <div class="highlight-card">
+                            <div class="highlight-icon">📊</div>
+                            <h3>性能监控集成</h3>
+                            <p>将性能监控集成到持续集成流程中，及时发现和解决性能问题。</p>
+                        </div>
+                        
+                        <div class="highlight-card">
+                            <div class="highlight-icon">🔄</div>
+                            <h3>错误处理机制</h3>
+                            <p>实现完善的错误处理机制，记录详细的错误信息，便于调试和问题定位。</p>
+                        </div>
+                        
+                        <div class="highlight-card">
+                            <div class="highlight-icon">🔒</div>
+                            <h3>安全考虑</h3>
+                            <p>避免在测试脚本中硬编码敏感信息，使用环境变量或配置文件管理凭据。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 学习资源 -->
+            <section class="content-section" id="resources">
+                <div class="content-card">
+                    <h2>学习资源</h2>
+                    
+                    <div class="content-grid">
+                        <div class="content-card">
+                            <h3>官方文档</h3>
+                            <ul style="padding-left: 20px; margin-bottom: 16px;">
+                                <li><a href="https://chromedevtools.github.io/devtools-protocol/" target="_blank">Chrome DevTools Protocol 官方文档</a></li>
+                                <li><a href="https://developer.chrome.com/docs/devtools/" target="_blank">Chrome DevTools 开发者指南</a></li>
+                                <li><a href="https://github.com/ChromeDevTools/devtools-protocol" target="_blank">DevTools Protocol GitHub 仓库</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="content-card">
+                            <h3>教程和示例</h3>
+                            <ul style="padding-left: 20px; margin-bottom: 16px;">
+                                <li>Google Developers 教程和示例</li>
+                                <li>DevTools 相关技术博客和文章</li>
+                                <li>GitHub 上的开源项目和示例代码</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="content-card">
+                            <h3>社区资源</h3>
+                            <ul style="padding-left: 20px; margin-bottom: 16px;">
+                                <li>参加 GDG 和 DevFest 工作坊</li>
+                                <li>加入 Chrome DevTools 相关社区和论坛</li>
+                                <li>关注相关技术演讲和视频教程</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <a href="index.html" class="footer-logo">
+                    <span class="google-g">G</span>
+                    <span class="google-o1">o</span>
+                    <span class="google-o2">o</span>
+                    <span class="google-g2">g</span>
+                    <span class="google-l">l</span>
+                    <span class="google-e">e</span>
+                    <span class="devfest-text"> DevFest</span>
+                </a>
+                
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="gdg-devfest.html">GDG & DevFest</a></li>
+                        <li><a href="devtools-mcp.html">DevTools MCP</a></li>
+                        <li><a href="about-me.html">关于我</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <p>© 2023 Google Developer Group</p>
+                    <p>本网站仅作为技术分享和学习使用</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
