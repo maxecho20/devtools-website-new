@@ -35,11 +35,9 @@ jobs:
           node-version: '18'
           cache: 'npm'
       
-      # 可选：如果有package.json，可以运行npm install和构建命令
-      # - name: 安装依赖
-      #   run: npm ci
-      # - name: 构建项目
-      #   run: npm run build
+      # 运行npm install以使用package-lock.json
+      - name: 安装依赖
+        run: npm ci
       
       - name: 设置Pages
         uses: actions/configure-pages@v4
